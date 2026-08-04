@@ -1,0 +1,175 @@
+/* =====================================================
+   Fake Captcha Redirect – style.css
+   ===================================================== */
+
+.fcr-wrapper {
+    display: inline-block;
+    font-family: 'Roboto', Arial, sans-serif;
+    user-select: none;
+}
+
+/* ---------- Box principal ---------- */
+.fcr-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    padding: 14px 16px;
+    min-width: 300px;
+    max-width: 380px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    transition: box-shadow .2s ease;
+    cursor: pointer;
+}
+
+.fcr-box:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+/* ---------- Lado esquerdo ---------- */
+.fcr-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+}
+
+/* ---------- Checkbox ---------- */
+.fcr-checkbox {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #c1c1c1;
+    border-radius: 2px;
+    background: #fff;
+    flex-shrink: 0;
+    transition: border-color .2s ease, background .2s ease;
+    overflow: hidden;
+}
+
+.fcr-checkbox:hover {
+    border-color: #4a90d9;
+}
+
+.fcr-check-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Checkmark SVG (oculto inicialmente) */
+.fcr-checkmark {
+    width: 15px;
+    height: 15px;
+    stroke: #fff;
+    opacity: 0;
+    transform: scale(.4);
+    transition: opacity .2s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* Spinner (oculto inicialmente) */
+.fcr-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.fcr-spinner-ring {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e0e0e0;
+    border-top-color: #4a90d9;
+    border-radius: 50%;
+    animation: fcr-spin .7s linear infinite;
+}
+
+@keyframes fcr-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Estados --- */
+
+/* Estado: loading */
+.fcr-wrapper.is-loading .fcr-checkbox {
+    border-color: #4a90d9;
+    background: #fff;
+}
+.fcr-wrapper.is-loading .fcr-spinner {
+    opacity: 1;
+}
+.fcr-wrapper.is-loading .fcr-checkmark {
+    opacity: 0;
+    transform: scale(.4);
+}
+
+/* Estado: checked */
+.fcr-wrapper.is-checked .fcr-checkbox {
+    border-color: #4caf50;
+    background: #4caf50;
+    animation: fcr-pop .25s cubic-bezier(.34,1.56,.64,1);
+}
+.fcr-wrapper.is-checked .fcr-checkmark {
+    opacity: 1;
+    transform: scale(1);
+}
+.fcr-wrapper.is-checked .fcr-spinner {
+    opacity: 0;
+}
+
+@keyframes fcr-pop {
+    0%   { transform: scale(.85); }
+    60%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- Label ---------- */
+.fcr-label {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: .01em;
+}
+
+/* ---------- Lado direito (branding) ---------- */
+.fcr-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.fcr-recaptcha-logo {
+    width: 38px;
+    height: 38px;
+}
+
+.fcr-brand {
+    font-size: 8px;
+    color: #555;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.fcr-links {
+    font-size: 7.5px;
+    color: #999;
+    letter-spacing: .02em;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 400px) {
+    .fcr-box {
+        min-width: 260px;
+        padding: 12px;
+    }
+}
