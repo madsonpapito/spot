@@ -511,5 +511,70 @@
     </div>
   </footer>
 
+  <!-- DYNAMIC DRAW DATA: fills the __DRAW_DATE__, __JACKPOT__ and __MEGAPLIER__ placeholders -->
+  <script>
+    (function () {
+      "use strict";
+
+      // Fixed tables supplied for the advertorial
+      var JACKPOT_TABLE = [
+        "22 Million", "3 Million", "23 Million", "32 Million", "12 Million",
+        "5 Million", "22 Million", "4 Million", "536 Million", "13 Million",
+        "516 Million", "11 Million"
+      ];
+      var MEGAPLIER_TABLE = ["2X", "3X", "4X", "5X", "10X"];
+
+      // Most recent Tuesday (2) or Friday (5) on or before today
+      function getLastDrawDate(now) {
+        var d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        for (var i = 0; i < 7; i++) {
+          var day = d.getDay();
+          if (day === 2 || day === 5) return d;
+          d.setDate(d.getDate() - 1);
+        }
+        return d;
+      }
+
+      // Stable per-day pick so the jackpot stays the same across page loads on
+      // the same draw day and only changes on the next Tuesday/Friday.
+      function pickByDate(table, date) {
+        var key = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+        var h = 0;
+        for (var i = 0; i < key.length; i++) {
+          h = (h * 31 + key.charCodeAt(i)) >>> 0;
+        }
+        return table[h % table.length];
+      }
+
+      function pickRandom(table) {
+        return table[Math.floor(Math.random() * table.length)];
+      }
+
+      var DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      var draw = getLastDrawDate(new Date());
+      var dateStr = DAY_NAMES[draw.getDay()] + ", " +
+        (draw.getMonth() + 1) + "/" + draw.getDate() + "/" + draw.getFullYear();
+
+      var jackpot = pickByDate(JACKPOT_TABLE, draw);
+      var megaplier = pickRandom(MEGAPLIER_TABLE);
+
+      replaceText("__DRAW_DATE__", dateStr);
+      replaceText("__JACKPOT__", jackpot);
+      replaceText("__MEGAPLIER__", megaplier);
+
+      function replaceText(token, value) {
+        var walker = document.createTreeWalker(
+          document.body, NodeFilter.SHOW_TEXT, null, false
+        );
+        var node;
+        while ((node = walker.nextNode())) {
+          if (node.nodeValue.indexOf(token) !== -1) {
+            node.nodeValue = node.nodeValue.replace(token, value);
+          }
+        }
+      }
+    })();
+  </script>
+
 </body>
 </html>
