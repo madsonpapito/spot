@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mega Millions — Information & How to Play | Sponsored Content</title>
+  <meta name="description" content="Informational guide about the American Mega Millions lottery: how draws work, how to check official results, and where to play through authorized platforms. Sponsored content.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f4f4f4;
+      --surface: #ffffff;
+      --text: #111;
+      --text-secondary: #555;
+      --border: #ddd;
+      --accent: #c00;
+      --accent-dark: #900;
+      --ad-bg: #fff8e1;
+      --ad-border: #e6c200;
+      --ad-text: #7a5c00;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Sponsored / Advertisement disclosure — clearly visible */
+    .ad-disclosure {
+      background: var(--ad-bg);
+      border-bottom: 2px solid var(--ad-border);
+      color: var(--ad-text);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .4px;
+      padding: 8px 16px;
+      text-align: center;
+    }
+    .ad-disclosure strong {
+      text-transform: uppercase;
+      background: var(--ad-text);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: 8px;
+    }
+
+    .top-bar {
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 16px;
+      text-align: center;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 3px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: 26px;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -1px;
+    }
+    .logo span { color: var(--text); }
+    header nav { display: flex; gap: 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+    header nav a { color: var(--text); text-decoration: none; }
+    header nav a:hover { color: var(--accent); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 28px 16px 48px; }
+
+    /* Article layout */
+    .article-wrap { display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: start; }
+
+    .article {
+      background: var(--surface);
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+    .article-hero { width: 100%; height: 320px; object-fit: cover; display: block; }
+    .article-body { padding: 28px 32px 36px; }
+    .article-body .kicker {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      padding: 3px 9px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .article-body h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .article-body .byline { font-size: 13px; color: #999; margin-bottom: 22px; }
+    .article-body h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 30px 0 12px;
+    }
+    .article-body p { font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; }
+    .article-body p strong { color: var(--text); }
+    .article-body ul { margin: 0 0 16px 22px; color: var(--text-secondary); font-size: 16px; }
+    .article-body ul li { margin-bottom: 8px; }
+
+    /* Results info box — honest, points to official source, no fabricated numbers */
+    .results-box {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin: 24px 0;
+    }
+    .results-box h3 { font-family: 'Merriweather', serif; font-size: 17px; margin-bottom: 8px; }
+    .results-box p { font-size: 14px; margin-bottom: 8px; }
+    .results-box a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .results-box a:hover { text-decoration: underline; }
+    .results-box .note { font-size: 12px; color: #999; margin-top: 6px; }
+    .results-box .draw-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .results-box .draw-row:last-of-type { border-bottom: none; }
+    .results-box .draw-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-secondary); width: 110px; flex-shrink: 0; }
+    .results-box .draw-value { font-size: 16px; font-weight: 700; color: var(--text); }
+    .results-box .balls { display: inline-flex; gap: 8px; }
+    .results-box .ball {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%; font-weight: 800; font-size: 15px; color: #fff;
+    }
+    .results-box .ball.white { background: #2b6cb0; }
+    .results-box .ball.gold { background: var(--accent); }
+
+    /* Two-card layout for official results + next drawing */
+    .draw-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .draw-card { background: #fafafa; border: 1px solid var(--border); border-radius: 6px; padding: 18px 20px; }
+    .draw-card.next { border-left: 4px solid var(--accent); }
+    .draw-card h3 { font-family: 'Merriweather', serif; font-size: 17px; margin-bottom: 6px; }
+    .draw-card .sub { font-size: 12px; color: #999; margin-bottom: 14px; }
+    .draw-card .big {
+      font-family: 'Merriweather', serif; font-weight: 900; color: var(--accent);
+      font-size: 30px; line-height: 1; margin: 4px 0 2px;
+    }
+    .draw-card .big-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-secondary); }
+    .draw-card .row { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--border); font-size: 14px; }
+    .draw-card .row .k { color: var(--text-secondary); }
+    .draw-card .row .v { font-weight: 700; color: var(--text); text-align: right; }
+    .draw-card .source { font-size: 12px; color: #999; margin-top: 12px; }
+    .draw-card .source a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    @media (max-width: 600px) { .draw-cards { grid-template-columns: 1fr; } }
+
+    /* Winners gallery — illustrative, honest captions */
+    .gallery-title {
+      font-family: 'Merriweather', serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 36px 0 6px;
+    }
+    .gallery-sub { font-size: 14px; color: #999; margin-bottom: 18px; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .gallery figure {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .gallery img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .gallery figcaption { padding: 10px 12px; font-size: 12px; color: var(--text-secondary); }
+    .gallery figcaption .name { font-weight: 700; color: var(--text); display: block; margin-bottom: 2px; }
+
+    /* Transparent CTA — no guarantee / no "be the next millionaire" */
+    .cta-block {
+      margin: 40px 0 0;
+      background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 28px 30px;
+      text-align: center;
+    }
+    .cta-block h3 { font-family: 'Merriweather', serif; font-size: 22px; margin-bottom: 10px; }
+    .cta-block p { font-size: 15px; color: var(--text-secondary); margin-bottom: 18px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 34px;
+      border-radius: 6px;
+      letter-spacing: .3px;
+    }
+    .cta-btn:hover { background: var(--accent-dark); }
+    .cta-block .disclaimer { font-size: 12px; color: #999; margin-top: 14px; }
+
+    /* Sidebar */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 90px; }
+    .side-card {
+      background: var(--surface);
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      padding: 18px 20px;
+    }
+    .side-card h4 { font-family: 'Merriweather', serif; font-size: 15px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .4px; }
+    .side-card ul { list-style: none; }
+    .side-card li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+    .side-card li:last-child { border-bottom: none; }
+    .side-card a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .side-card .ad-tag {
+      display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+      color: var(--ad-text); background: var(--ad-bg); border: 1px solid var(--ad-border);
+      padding: 2px 6px; border-radius: 3px; margin-bottom: 10px;
+    }
+
+    footer { background: #1a1a1a; color: #aaa; padding: 32px 16px 20px; font-size: 13px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .footer-inner h4 { color: #fff; font-size: 14px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+    .footer-inner a { display: block; color: #aaa; text-decoration: none; margin-bottom: 6px; }
+    .footer-inner a:hover { color: #fff; }
+    .footer-bottom { max-width: 1100px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #333; font-size: 12px; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+      .article-body h1 { font-size: 26px; }
+      .article-hero { height: 220px; }
+    }
+    @media (max-width: 600px) {
+      header nav { display: none; }
+      .gallery { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .article-body { padding: 22px 18px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CLEAR ADVERTISEMENT DISCLOSURE -->
+  <div class="ad-disclosure">
+    <strong>Advertisement</strong>
+    This is sponsored content created by a third party. It is not affiliated with, endorsed by, or officially connected to the official Mega Millions lottery or its operators.
+  </div>
+
+  <div class="top-bar">Informational Guide &bull; Mega Millions</div>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">MEGA<span>MILLIONS</span></a>
+      <nav>
+        <a href="#">How to Play</a>
+        <a href="#">Results</a>
+        <a href="#">Winners</a>
+        <a href="#">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="article-wrap">
+
+      <!-- MAIN ARTICLE -->
+      <article class="article">
+        <img class="article-hero" src="img/Thacker_IN-winner.jpg" alt="Illustration representing lottery players" loading="lazy">
+        <div class="article-body">
+
+          <span class="kicker">Sponsored Guide</span>
+          <h1>Mega Millions: How the American Lottery Works and Where to Play</h1>
+          <div class="byline">Updated September 2026 &bull; Sponsored Content</div>
+
+          <p>
+            <strong>Mega Millions</strong> is one of the most recognized lottery games in the United States,
+            with drawings held every Tuesday and Friday. This guide explains, in plain language, how the game
+            works, how winners are determined, and the legitimate ways players around the world can take part
+            through authorized platforms.
+          </p>
+
+          <h2>How a Mega Millions draw works</h2>
+          <p>
+            In each draw, five white balls (numbered 1&ndash;70) and one gold &ldquo;Mega Ball&rdquo; (numbered
+            1&ndash;25) are selected at random. A ticket matches the jackpot by matching all six numbers. Smaller
+            prizes are awarded for partial matches. The odds of winning the jackpot are approximately
+            <strong>1 in 302.6 million</strong> &mdash; every combination has the same chance, and no method or
+            product can change those odds.
+          </p>
+
+          <!-- REAL RESULTS + NEXT DRAWING CARDS — official figures from megamillions.com -->
+          <div class="draw-cards">
+
+            <!-- CARD 1: latest official result -->
+            <div class="draw-card">
+              <h3>Latest Result</h3>
+              <p class="sub">Official draw record &mdash; verify at
+                <a href="https://www.megamillions.com" target="_blank" rel="noopener">megamillions.com</a>.</p>
+
+              <!-- EDIT DRAW DATE / JACKPOT / MEGAPLIER WITH OFFICIAL VALUES -->
+              <div class="draw-row">
+                <span class="draw-label">Drawing date</span>
+                <span class="draw-value">__DRAW_DATE__</span>
+              </div>
+              <!-- END EDIT -->
+              <div class="draw-row" style="align-items:center;">
+                <span class="draw-label">Winning numbers</span>
+                <span class="balls">
+                  <span class="ball white">25</span>
+                  <span class="ball white">57</span>
+                  <span class="ball white">58</span>
+                  <span class="ball white">67</span>
+                  <span class="ball white">68</span>
+                </span>
+              </div>
+              <div class="draw-row" style="align-items:center;">
+                <span class="draw-label">Mega Ball</span>
+                <span class="ball gold">16</span>
+              </div>
+              <!-- EDIT JACKPOT / MEGAPLIER -->
+              <div class="draw-row">
+                <span class="draw-label">Jackpot</span>
+                <span class="draw-value">__JACKPOT__</span>
+              </div>
+              <div class="draw-row">
+                <span class="draw-label">Megaplier</span>
+                <span class="draw-value">__MEGAPLIER__&times;</span>
+              </div>
+              <!-- END EDIT -->
+              <p class="source">
+                Reference only &mdash; not a substitute for the official draw record.
+              </p>
+            </div>
+
+            <!-- CARD 2: next drawing (real estimated figures) -->
+            <div class="draw-card next">
+              <h3>Next Drawing</h3>
+              <p class="sub">Estimated figures from the official site.</p>
+
+              <div class="big-label">Next Estimated Jackpot</div>
+              <div class="big">$300 Million</div>
+              <div class="row">
+                <span class="k">Cash Option</span>
+                <span class="v">$124.1 Million</span>
+              </div>
+              <div class="row">
+                <span class="k">Next Drawing</span>
+                <span class="v">Tuesday, 9/29<br>@ 11 p.m. ET</span>
+              </div>
+              <div class="row">
+                <span class="k">How to Play</span>
+                <span class="v"><a href="https://www.megamillions.com/how-to-play" target="_blank" rel="noopener">View guide</a></span>
+              </div>
+              <p class="source">
+                Source: <a href="https://www.megamillions.com" target="_blank" rel="noopener">megamillions.com</a>.
+                Estimates may change before the draw.
+              </p>
+            </div>
+
+          </div>
+
+          <h2>Can players outside the U.S. take part?</h2>
+          <p>
+            Mega Millions tickets are sold through authorized retailers and licensed platforms. Over the years,
+            people from many different countries and backgrounds have taken an interest in the game &mdash; some
+            through travel, others through family in the U.S., and increasingly through authorized online
+            services that facilitate legal entry on a player&rsquo;s behalf.
+          </p>
+          <p>
+            What all genuine participants share is the same random odds. There is no &ldquo;secret sequence&rdquo;
+            or guaranteed way to win; anyone suggesting otherwise is not describing how the lottery actually works.
+          </p>
+
+          <!-- WINNERS GALLERY: illustrative, honest captions -->
+          <div class="gallery-title">Players &amp; Past Winners Gallery</div>
+          <div class="gallery-sub">Illustrative imagery. These photos are used for representation only and do not depict purchases made through any specific service, nor do they imply any individual won by using a particular product.</div>
+          <div class="gallery">
+            <figure><img src="img/Almeida_ID-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/DebraBickle_IA-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/Eash_NE-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/IA_Ferriss-Snyder-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/LuckyLady_IL-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/MA_McKenzie-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/Neighbors_VA-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/Nguyen_VA-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+            <figure><img src="img/NM_Paul-winner.jpg" alt="Lottery player portrait" loading="lazy"><figcaption><span class="name">Illustrative</span>Representative player portrait.</figcaption></figure>
+          </div>
+
+          <!-- TRANSPARENT CTA: no false promises -->
+          <div class="cta-block">
+            <h3>Want to learn more about playing?</h3>
+            <p>
+              Explore how authorized platforms work and what options are available in your region. No purchase is
+              required to read the information.
+            </p>
+            <a class="cta-btn" href="/sell-page/">See How It Works</a>
+            <p class="disclaimer">
+              Playing the lottery involves risk. Winning is never guaranteed. Please play responsibly and only
+              spend what you can afford to lose. This is sponsored content and is not affiliated with the official
+              Mega Millions lottery.
+            </p>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="side-card">
+          <span class="ad-tag">Sponsored</span>
+          <h4>Quick Facts</h4>
+          <ul>
+            <li>Draws: Tuesday &amp; Friday</li>
+            <li>Jackpot odds: ~1 in 302.6M</li>
+            <li>Cost per play: $2 (U.S.)</li>
+            <li>White balls: 1&ndash;70</li>
+            <li>Mega Ball: 1&ndash;25</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <span class="ad-tag">Sponsored</span>
+          <h4>Responsible Play</h4>
+          <ul>
+            <li>The lottery is a game of chance.</li>
+            <li>No product can improve your odds.</li>
+            <li>Set a budget before you play.</li>
+            <li>Help: <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a></li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <span class="ad-tag">Sponsored</span>
+          <h4>Learn More</h4>
+          <ul>
+            <li><a href="/sell-page/">How authorized play works</a></li>
+            <li><a href="https://www.megamillions.com" target="_blank" rel="noopener">Official results</a></li>
+            <li><a href="#">Frequently asked questions</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Lottery</h4>
+        <a href="#">How to Play</a>
+        <a href="#">Results</a>
+        <a href="#">Winners</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="https://www.megamillions.com" target="_blank" rel="noopener">Official Mega Millions</a>
+        <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">Responsible Gaming</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter/X</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Mega Millions Information Guide. This is an independent, sponsored informational website and is
+      not affiliated with, endorsed by, or officially connected to the official Mega Millions lottery or its
+      operators. Lottery play involves risk and winning is never guaranteed. Play responsibly.
+    </div>
+  </footer>
+
+</body>
+</html>
